@@ -7,7 +7,7 @@ export default function ViewArt() {
 
     const fetchArts = async () => {
         try {
-            const res = await fetch(`${config.url}/view`);
+            const res = await fetch(`${config.url}/art/view`);
             const data = await res.json();
             setArts(data);
         } catch (error) {
@@ -19,7 +19,7 @@ export default function ViewArt() {
 
     const handleDelete = async (id) => {
         try {
-            const res = await fetch(`${config.url}/delete/${id}`, { method: 'DELETE' });
+            const res = await fetch(`${config.url}/art/delete/${id}`, { method: 'DELETE' });
             if (res.ok) setArts(arts.filter(art => art.id !== id));
         } catch (error) {
             console.error(error);

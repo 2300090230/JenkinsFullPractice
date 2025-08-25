@@ -1,5 +1,5 @@
 const config = {
-    url: "http://localhost:2069/onlineart/art"
+    url: "http://localhost:2030/onlineart"
 }
 
 export default config;
