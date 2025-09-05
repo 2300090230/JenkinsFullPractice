@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.art.model.Art;
 import com.art.repository.ArtRepository;
 
@@ -25,7 +26,7 @@ public class ArtServiceImpl implements ArtService {
     }
 
     @Override
-    public String deleteArt(String id) {
+    public String deleteArt(Integer id) {
         Optional<Art> artOpt = artrepo.findById(id);
         if(artOpt.isPresent()) {
             artrepo.deleteById(id);

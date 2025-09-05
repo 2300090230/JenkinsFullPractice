@@ -1,22 +1,28 @@
 package com.art.model;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Document(collection = "Arts")
+@Entity
+@Table(name = "arts")
 public class Art {
+
 	@Id
-	private String Id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String artname;
 	private int price;
 	private String category;
 
-	public String getId() {
-		return Id;
+	public int getId() {
+		return id;
 	}
 
-	public void setId(String id) {
-		Id = id;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getArtname() {
@@ -42,6 +48,5 @@ public class Art {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
 
 }

@@ -7,7 +7,7 @@ public interface ArtService {
 	
 	public Art addArt(Art art);
 	public List<Art> viewArt();
-	String deleteArt(String id);
+	String deleteArt(Integer id);
 	
 
 }
